@@ -66,4 +66,175 @@
      - Reminder notifications.
      - Monthly invoice generation.
 
+## Examples
 
+1. **Analytical Events**:
+
+```json
+{
+    "context_properties": {
+        "user_id": "26063140",
+        "user_type": "CONSUMER",
+        "event": "user-button-click",
+        "app_name": "user-analytics",
+        "app_type": "MICROSERVICE",
+        "app_version": "1.0.0",
+        "domain_name": "analytics",
+        ...
+    },
+    "event_properties": {
+        "interaction": {
+            "buttonType": "signup",
+            "timeStamp": "2023-10-17T15:05:00Z",
+            ...
+        }
+    },
+    "additional_properties": {
+        ...
+    }
+}
+```
+
+2. **Systematic Events**:
+
+```json
+{
+    "context_properties": {
+        ...
+        "event": "database-item-addition",
+        "app_name": "backend-service",
+        "domain_name": "database",
+        ...
+    },
+    "event_properties": {
+        "database": {
+            "databaseName": "OrdersDB",
+            "itemID": "12345",
+            ...
+        }
+    },
+    "additional_properties": {
+        ...
+    }
+}
+```
+
+3. **Operational/Log Events**:
+
+```json
+{
+    "context_properties": {
+        ...
+        "event": "cpu-load-threshold-crossed",
+        "app_name": "ops-monitor",
+        "domain_name": "operations",
+        ...
+    },
+    "event_properties": {
+        "server": {
+            "serverID": "server123",
+            "currentLoad": 90,
+            ...
+        }
+    },
+    "additional_properties": {
+        ...
+    }
+}
+```
+
+4. **Business Events**:
+
+```json
+{
+    "context_properties": {
+        ...
+        "event": "order-placed",
+        "app_name": "sales-platform",
+        "domain_name": "sales",
+        ...
+    },
+    "event_properties": {
+        "order": {
+            "orderID": 56789,
+            "customerID": "cust123",
+            ...
+        }
+    },
+    "additional_properties": {
+        ...
+    }
+}
+```
+
+5. **External Events**:
+
+```json
+{
+    "context_properties": {
+        ...
+        "event": "payment-status-update",
+        "app_name": "finance-integration",
+        "domain_name": "finance",
+        ...
+    },
+    "event_properties": {
+        "payment": {
+            "transactionID": "trans789",
+            "status": "completed",
+            ...
+        }
+    },
+    "additional_properties": {
+        ...
+    }
+}
+```
+
+6. **State Change Events**:
+
+```json
+{
+    "context_properties": {
+        ...
+        "event": "user-status-change",
+        "app_name": "user-management",
+        "domain_name": "users",
+        ...
+    },
+    "event_properties": {
+        "user": {
+            "userID": "aliceDoe",
+            "newStatus": "offline",
+            ...
+        }
+    },
+    "additional_properties": {
+        ...
+    }
+}
+```
+
+7. **Temporal Events**:
+
+```json
+{
+    "context_properties": {
+        ...
+        "event": "data-backup",
+        "app_name": "backup-service",
+        "domain_name": "backup",
+        ...
+    },
+    "event_properties": {
+        "backup": {
+            "backupSize": "50GB",
+            "backupType": "daily",
+            ...
+        }
+    },
+    "additional_properties": {
+        ...
+    }
+}
+```
